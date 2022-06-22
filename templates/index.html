@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <section class="hero">
+        <div class="background-image" style="background-image: url(static/images/ducpan1.jpg);"></div>
+        <img src="../static/images/logo.png"/>
+        <h3>Since 1950</h3>
+        <a href="{{url_for('views.store')}}" class="btn">Shop</a>
+    </section>
+
+
+    <section class="our-work">
+        <h3 class="title">About Us</h3>
+        <p> BikeLife has been the largest motorcycle eCommerce platform in Europe since 1950. Through its strong payment and logical support, a company suited for the continent makes motorbike purchasing easy, secure, and quick. Continually developing and offering high-performance and most modern visual themes motorbikes with the most streamlined exterior look. Our motorbikes are designed with passion and integrity, with a focus on customer satisfaction. </p>
+        <hr>
+
+        <ul class="grid">
+            <li class="small" style="background-image: url(static/images/bike1.jpg);"></li>
+            <li class="large" style="background-image: url(static/images/bike2.jpg);"></li>
+            <li class="large" style="background-image: url(static/images/bike3.png);"></li>
+            <li class="small" style="background-image: url(static/images/bike4.jpg);"></li>
+        </ul>
+    </section>
+
+        </div>
+    </section>
+
+
+    <section class="reviews">
+        <h3 class="title">Customer Reviews</h3>
+
+        <p class="quote"> "We've seen amazing results already. The very best. I would be lost without bikelife shop. We've used bikelife shop for the last five years." </p>
+        <p class="author">— "Bruce Wayne" </p>
+
+        <p class="quote"> "You've saved our business! Dude, your stuff is the bomb! Bikelife shop did exactly what you said it does. I will refer everyone I know." </p>
+        <p class="author">— "Clarke Kent"</p>
+
+        <p class="quote"> "I have gotten at least 50 times the value from bikelife shop." </p>
+        <p class="author">— "Tony Stark" </p>
+    </section>
+
+
+    <section class="contact">
+        <h3 class="title">Join our newsletter</h3>	
+        <p>Register Below</p>
+        <hr>
+        <form>
+            <input type="email" placeholder="Email">
+            <a href="#" class="btn">Subscribe now</a>
+        </form>
+    </section>
+
+{% endblock %}
