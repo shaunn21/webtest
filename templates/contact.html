@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="innerhero">
+    <img src="../static/images/bg3.jpg" />
+    <h1> Contact us </h1>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <h3 class="text-center text-uppercase"></h3>
+        <p class="text-center w-75 m-auto"></p>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <i class="fa fa-phone fa-5x mb-3" aria-hidden="true"></i>
+                        <h4 class="text-uppercase mb-5">call us</h4>
+                        <p>+447765238382 | 01617376436</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
+                        <h4 class="text-uppercase mb-5">Bike shop location</h4>
+                        <address>145 rend lane, Salford, Manchester, M44 66P </address>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <i class="fa-solid fa-location-crosshairs fa-5x mb-3" aria-hidden="true"></i>
+                        <h4 class="text-uppercase mb-5">Office location</h4>
+                        <address>Suite 98, Madness building, Level 123, Boomer City </address>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <i class="fa fa-globe fa-5x mb-3" aria-hidden="true"></i>
+                        <h4 class="text-uppercase mb-5">Email</h4>
+                        <p>BikLifeCompany@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="span6">
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <input id="name" name="name" type="text" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="col">
+                            <input id="email" name="email" type="email" class="form-control" placeholder="Email address">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <textarea id="message" name="message" class="form-control" placeholder="Your Message" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-2 ">
+                        <button id="contact-submit" type="submit"
+                            class="btn btn-danger btn-lg input-medium pull-right">Send</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}

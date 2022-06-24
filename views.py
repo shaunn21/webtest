@@ -4,9 +4,6 @@ from flask import current_app as app
 
 views = Blueprint("views", __name__)
 
-#! view in this instance is a blueprint
-
-
 
 def dbconnection():
     conn = psycopg2.connect(host=app.config['db_host'], database=app.config['db_name'], user=app.config['db_username'], password=app.config['db_password'])
@@ -46,11 +43,9 @@ def getproductimages(id):
     results = list(results)
     return results
     
-
 @views.route("/")
 def home():
     return render_template("index.html")
-
 
 @views.route("/contact")
 def contact():

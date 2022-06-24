@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="innerhero">
+    <img src="/static/images/bg3.jpg" />
+</section>
+<div class="innerlogo">
+    <img src="/static/images/logo.png" />
+</div>
+
+<div class="container mt-8 mb-5">
+    <div class="product row">
+        <div class=" col">
+            <div class="product-img">
+                <div class="container mt-8 mb-8">
+                    <div class="row">
+                        {% if images|length > 1 %}
+                            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+                                <div class="carousel-indicators">
+                                    {% for img in images %}
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ loop.index }}" class="active"
+                                        aria-current="true" aria-label="Slide 1"></button>
+                                    {% endfor %}
+                                </div>
+                                <div class="carousel-inner">
+                                    {%  for img in images %}
+                                    <div class="carousel-item {% if loop.first==1 %} active {% endif %}">
+                                        <img src="{{ img[0] }}{{ img[1] }}" class="d-block w-100" alt="...">
+                                        <div class="carousel-caption d-none d-md-block">
+                                        </div>                          
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                                    data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                                    data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="">
+                                <ul class="d-flex justify-content-center">
+                                    {% for img in images %}
+                                    <li>
+                                        <img src="{{ img[0] }}{{ img[1] }}" class="thumbnail-img"/>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% else %}
+                        <img src="{{ images[0][0] }}{{ images[0][1] }}"/>
+                        {% endif %}
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <p class="info" id="description">{{product[0][2]}}</p>
+            </div>
+        </div>
+        <div class="product-listing col">
+            <div class="content">
+                <h1 class="name">{{product[0][1]}}</h1>
+                <p class="info">{{product[0][2]|truncate(150)}}<a class="readmore" id="toDescription">Read More</a></p>
+                <ul>
+                    {% for add in additions %}
+                    <li>
+                        <strong>
+                            {{add[0]}}
+                        </strong>
+                        {{add[1]}}
+                    </li>
+                    {% endfor %}
+                </ul>
+                <p class="price">&pound;{{product[0][3]}}</p>
+                <div class="d-flex justify-content-center">
+                    <button class="btn btn-outline-danger btn-lg">buy now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    console.log("something")
+    const toDescription = document.getElementById("toDescription");
+    toDescription.addEventListener("click", function(){
+        document.getElementById("description").scrollIntoView();
+    })
+</script>
+{% endblock %}
